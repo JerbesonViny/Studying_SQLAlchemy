@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 DATABASE_URL = 'sqlite+aiosqlite:///example.db'
 
 # Criando a engine que faz comunicação com o banco
-engine = create_async_engine(DATABASE_URL)
+engine = create_async_engine(DATABASE_URL, echo=True)
 
 # Criando a sessão
 session = sessionmaker(future=True, class_=AsyncSession, bind=engine)
