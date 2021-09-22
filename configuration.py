@@ -1,5 +1,5 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-from sqlalchemy.ext.declarative import declarative_base
+
 from sqlalchemy.orm import sessionmaker
 
 # Caminho onde o banco de dados deve ficar
@@ -10,5 +10,3 @@ engine = create_async_engine(DATABASE_URL, echo=True)
 
 # Criando a sessão
 session = sessionmaker(future=True, class_=AsyncSession, bind=engine)
-
-Base = declarative_base()
